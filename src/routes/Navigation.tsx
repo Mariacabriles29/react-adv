@@ -1,57 +1,55 @@
 /*Creando rutas con react router dom version 6  */
 
 import {
-  BrowserRouter,
-  NavLink,
-  Navigate,
-  Route,
+  BrowserRouter as Router,
   Routes,
+  Route,
+  NavLink,
 } from "react-router-dom";
+
 import logo from "../logo.svg";
-import { LazyPage1, LazyPage2, LazyPage3 } from "../01-lazyload/pages";
+import { ShoppingPage } from "../02-component-patterns/pages/ShoppingPage";
+
 export const Navigation = () => {
   return (
-    <>
-      <BrowserRouter>
-        <div className="main-layout">
-          <nav>
-            <img src={logo} alt="React logo" />
-            <ul>
-              <li>
-                <NavLink
-                  to="/lazy1"
-                  className={({ isActive }) => (isActive ? "nav-active" : "")}
-                >
-                  Lazy 1
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/lazy2"
-                  className={({ isActive }) => (isActive ? "nav-active" : "")}
-                >
-                  Lazy 2
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/lazy3"
-                  className={({ isActive }) => (isActive ? "nav-active" : "")}
-                >
-                  Lazy 3
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          <Routes>
-            <Route path="lazy1" element={<LazyPage1 />} />
-            <Route path="lazy2" element={<LazyPage2 />} />
-            <Route path="lazy3" element={<LazyPage3 />} />
+    <Router>
+      <div className="main-layout">
+        <nav>
+          <img src={logo} alt="React Logo" />
+          <ul>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                Shopping
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/users"
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                Users
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
 
-            <Route path="/*" element={<Navigate to="/lazy1" replace />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </>
+        <Routes>
+          <Route path="/about" element={<h1>About</h1>}></Route>
+          <Route path="/users" element={<h1>Users</h1>}></Route>
+          <Route path="/" element={<ShoppingPage />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 };
