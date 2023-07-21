@@ -1,9 +1,9 @@
-import {
+import ProductCard, {
   ProductButtons,
-  ProductCard,
   ProductImage,
   ProductTitle,
-} from "../components/";
+} from "../components";
+import "../styles/custom-styles.css";
 
 const product = {
   id: "1",
@@ -13,7 +13,7 @@ const product = {
 
 export const ShoppingPage = () => {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <h1>Shopping Store</h1>
       <hr />
       <div
@@ -23,15 +23,37 @@ export const ShoppingPage = () => {
           flexWrap: "wrap",
         }}
       >
-        <ProductCard product={product}>
-          <ProductCard.Image />
-          <ProductCard.Title title={""} />
-          <ProductCard.Buttons />
+        <ProductCard product={product} className="bg-dark text-white">
+          <>
+            <ProductCard.Image className="custom-image" />
+            <ProductCard.Title className="text-bold" activeClass="active " />
+            <ProductCard.Buttons className="custom-buttons" />
+          </>
         </ProductCard>
-        <ProductCard product={product}>
-          <ProductImage />
-          <ProductTitle />
-          <ProductButtons />
+
+        {/* agregando clases a los componentes
+         */}
+        <ProductCard product={product} className="bg-dark text-white">
+          <ProductImage
+            className="custom-image"
+            style={{ boxShadow: "10px 10px 10px rgba(0,0,0,0.2)" }}
+          />
+          <ProductTitle className=" text-bold" activeClass="active " />
+          <ProductButtons className="custom-buttons " />
+        </ProductCard>
+        <ProductCard
+          product={product}
+          style={{
+            backgroundColor: "#70D1F8",
+          }}
+        >
+          <ProductImage
+            style={{ boxShadow: "10px 10px 10px rgba(0,0,0,0.2)" }}
+          />
+          <ProductTitle style={{ fontWeight: "bold" }} />
+          <ProductButtons
+            style={{ display: "flex", justifyContent: "flex-end" }}
+          />
         </ProductCard>
       </div>
     </div>
