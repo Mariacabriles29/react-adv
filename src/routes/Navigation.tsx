@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import logo from "../logo.svg";
 import { About, Home, Users } from "../01-lazyload/pages";
+
 export const Navigation = () => {
   return (
     <>

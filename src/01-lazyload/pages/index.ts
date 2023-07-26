@@ -1,3 +1,4 @@
-export { Home } from "./Home";
-export { About } from "./About";
-export { Users } from "./Users";
+import { Home } from "./Home";
+import { About } from "./About";
+import { Users } from "./Users";
+export { Users, Home, About };
