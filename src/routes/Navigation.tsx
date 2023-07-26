@@ -8,7 +8,8 @@ import {
   Routes,
 } from "react-router-dom";
 import logo from "../logo.svg";
-import { About, Home, Users } from "../01-lazyload/pages";
+import { About, Users } from "../01-lazyload/pages";
+import { RegisterPage } from "../03-forms/pages/RegisterPage";
 
 export const Navigation = () => {
   return (
@@ -20,10 +21,10 @@ export const Navigation = () => {
             <ul>
               <li>
                 <NavLink
-                  to="/home"
+                  to="/register"
                   className={({ isActive }) => (isActive ? "nav-active" : "")}
                 >
-                  Home
+                  Register Page
                 </NavLink>
               </li>
               <li>
@@ -45,7 +46,7 @@ export const Navigation = () => {
             </ul>
           </nav>
           <Routes>
-            <Route path="home" element={<Home />} />
+            <Route path="home" element={<RegisterPage />} />
             <Route path="about" element={<About />} />
             <Route path="users" element={<Users />} />
 
