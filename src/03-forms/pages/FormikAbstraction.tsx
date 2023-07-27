@@ -9,6 +9,7 @@ import {
 import * as Yup from "yup";
 import "../styles/styles.css";
 import { MyTextInput } from "../components/MyTextInput";
+import { MySelect } from "../components/MySelect";
 
 export const FormikAbstraction = () => {
   return (
@@ -63,15 +64,14 @@ export const FormikAbstraction = () => {
               type="email"
             />
 
-            <label htmlFor="jobType"> Joy Type</label>
-            <Field name="jobType" as="select">
+            <MySelect label="jobType" name="jobType">
               <option value="">Pick something</option>
               <option value="developer">Developer </option>
               <option value="designer">Designer </option>
               <option value="it-senior">IT Senior</option>
               <option value="it-junior">IT Junior </option>
-            </Field>
-            <ErrorMessage name="jobType" component="span" />
+            </MySelect>
+
             <label>
               <Field name="terms" type="checkbox" />
               Terms and conditions
