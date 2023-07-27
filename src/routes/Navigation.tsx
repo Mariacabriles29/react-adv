@@ -12,6 +12,7 @@ import { Users } from "../01-lazyload/pages";
 import { RegisterPage } from "../03-forms/pages/RegisterPage";
 import { FormikBasicPage } from "../03-forms/pages/FormikBasicPage";
 import { FormikYupPage } from "../03-forms/pages/FormikYupPage";
+import { FormikComponents } from "../03-forms/pages/FormikComponents";
 
 export const Navigation = () => {
   return (
@@ -47,6 +48,14 @@ export const Navigation = () => {
               </li>
               <li>
                 <NavLink
+                  to="/formik-components"
+                  className={({ isActive }) => (isActive ? "nav-active" : "")}
+                >
+                  Formik Components
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/users"
                   className={({ isActive }) => (isActive ? "nav-active" : "")}
                 >
@@ -59,6 +68,7 @@ export const Navigation = () => {
             <Route path="register" element={<RegisterPage />} />
             <Route path="formik-basic" element={<FormikBasicPage />} />
             <Route path="formik-yup" element={<FormikYupPage />} />
+            <Route path="formik-components" element={<FormikComponents />} />
             <Route path="users" element={<Users />} />
 
             <Route path="/*" element={<Navigate to="/register" replace />} />
