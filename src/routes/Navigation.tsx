@@ -9,11 +9,13 @@ import {
 } from "react-router-dom";
 import logo from "../logo.svg";
 import { Users } from "../01-lazyload/pages";
-import { RegisterPage } from "../03-forms/pages/RegisterPage";
-import { FormikBasicPage } from "../03-forms/pages/FormikBasicPage";
-import { FormikYupPage } from "../03-forms/pages/FormikYupPage";
-import { FormikComponents } from "../03-forms/pages/FormikComponents";
-import { FormikAbstraction } from "../03-forms/pages/FormikAbstraction";
+import {
+  FormikBasicPage,
+  FormikYupPage,
+  FormikComponents,
+  FormikAbstraction,
+  RegisterPage,
+} from "../03-forms/pages";
 
 export const Navigation = () => {
   return (
